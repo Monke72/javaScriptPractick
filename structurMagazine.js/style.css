@@ -1,0 +1,79 @@
+body {
+  height: 100vh;
+  background-color: aqua;
+}
+.card__image {
+  border-radius: 5%;
+  width: 450px;
+  height: 300px;
+}
+* {
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+}
+.cards {
+  padding-top: 120px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__button {
+  width: 50%;
+  padding: 10px 20px;
+  border: 0;
+  background-color: #a4a4a4;
+  transition: all 0.2s;
+  &:hover {
+    color: aqua;
+  }
+}
+.bascet {
+  padding-top: 30px;
+  display: flex;
+  justify-content: end;
+  padding-right: 30px;
+  position: relative;
+}
+.bascet__counter {
+  right: 17px;
+  top: 20px;
+  width: 22px;
+  height: 22px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+}
+.none {
+  display: none !important;
+}
+.bascet__menu {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    padding-top: 10px;
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+}
+.cards__bascet {
+  display: flex;
+}
+
+.any {
+  background-color: antiquewhite;
+}
