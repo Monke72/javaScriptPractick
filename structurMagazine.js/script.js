@@ -22,8 +22,17 @@ const cars = {
   },
 };
 
+const massCars = [cars.car1.id, cars.car2.id, cars.car3.id];
+massCars.forEach((el) => {
+  if (el === 1) {
+    console.log("how");
+  }
+});
+
+console.log(massCars);
+
 const carsInner = `
-<div class="card">
+<div class="card" id = ${cars.car1.id}>
 <img
   class="card__image"
   src=${cars.car1.photo}
@@ -33,7 +42,7 @@ const carsInner = `
 <p class="card__price">${cars.car1.price}</p>
 <button class="card__button">Купить</button>
 </div>
-<div class="card">
+<div class="card" id = ${cars.car2.id}>
 <img
   class="card__image"
   src=${cars.car2.photo}
@@ -42,7 +51,7 @@ const carsInner = `
 <p class="card__price">${cars.car2.price}</p>
 <button class="card__button">Купить</button>
 </div>
-<div class="card">
+<div class="card" id = ${cars.car3.id}>
 <img
   class="card__image"
   src=${cars.car3.photo}
@@ -56,12 +65,51 @@ const carsInner = `
 document.querySelector(".cards").innerHTML = carsInner;
 
 const buttonBuy = document.querySelectorAll(".card__button");
+const bascet = document.querySelector(".bascet__counter");
 console.log(buttonBuy);
+let itemCount = 0;
 
-function addInBascet() {
-  document.body.classList.toggle("any");
+function toggleButtonState(button) {
+  if (button.textContent === "Купить") {
+    button.textContent = "Удалить из корзины";
+    addInBascet();
+  } else {
+    button.textContent = "Купить";
+    removeFromBascet(); //если по клику тект не купить уменьшаем счетчик
+  }
 }
 
+function addInBascet() {
+  if (itemCount < massCars.length) {
+    itemCount++;
+  }
+  bascet.classList.remove("none");
+  bascet.textContent = itemCount;
+}
+
+function removeFromBascet() {
+  itemCount--;
+  if (itemCount === 0) {
+    bascet.classList.add("none");
+  } else {
+    bascet.textContent = itemCount;
+  }
+}
+
+let massBascet = [];
+const allIds = Object.values(cars).map((car) => car.id); //map() позволяет нам преобразовать каждый элемент массива в новый элемент. В данном случае мы извлекаем значение id из каждого объекта и помещаем его в новый массив
+
 buttonBuy.forEach((el) => {
-  el.addEventListener("click", addInBascet);
+  el.addEventListener("click", () => {
+    el.classList.toggle("new__button");
+    toggleButtonState(el);
+    let parentId = el.parentNode.id; // Получаем id родительского элемента
+    allIds.forEach((e) => {
+      if (e === document.getElementById(parentId)) {
+        massBascet.push[parentId];
+        console.log(massBascet);
+      }
+    });
+  });
 });
+console.log(massBascet);

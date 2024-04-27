@@ -49,6 +49,10 @@ body {
   background-color: yellow;
   border-radius: 50%;
   position: absolute;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .none {
   display: none !important;
@@ -76,4 +80,14 @@ body {
 
 .any {
   background-color: antiquewhite;
+}
+
+.new__button {
+  background-color: aqua;
+  border: 1px dashed #a4a4a4;
+  color: black;
+  transition: all 0.2s;
+  &:hover {
+    color: blue;
+  }
 }
