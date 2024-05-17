@@ -37,6 +37,7 @@ div.innerHTML = ul;
 const img = document.createElement("img");
 
 // Добавить следующие свойства к изображению
+
 // 1. Добавить атрибут source
 img.src = "https://picsum.photos/240";
 // 2. Добавить атрибут width со значением 240
