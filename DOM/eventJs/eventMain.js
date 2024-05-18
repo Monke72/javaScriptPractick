@@ -13,6 +13,6 @@ buttons.forEach((button) => {
   button.addEventListener("click", handleClick);
 });
 
-window.addEventListener("click", function (event) {
-  console.log("window click!", event);
-});
+// window.addEventListener("click", function (event) {
+//   console.log("window click!", event);
+// });
