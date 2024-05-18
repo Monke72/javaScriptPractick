@@ -1,0 +1,8 @@
+.any {
+  margin-bottom: 10px;
+  z-index: 52;
+  padding-top: 52px;
+  &::before {
+    background: red;
+  }
+}
