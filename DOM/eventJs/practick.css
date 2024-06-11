@@ -1,0 +1,13 @@
+body {
+  color: #fff;
+}
+.loyal,
+.wrong {
+  display: inline-flex;
+}
+.loyal {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}

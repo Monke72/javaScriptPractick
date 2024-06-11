@@ -17,4 +17,4 @@ users = {
 };
 
 const arrayOfAges = Object.values(users).map((user) => user.age);
-console.log(Object.values(users).map((user) => user.age));
+console.log(arrayOfAges);

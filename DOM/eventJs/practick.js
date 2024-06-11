@@ -1,22 +1,30 @@
 //Создайте функцию для обработки событий нажатия клавиши на поле ввода текста
 const input = document.querySelector(".input__val");
-input.addEventListener("click", function () {
-  console.log("you click on input");
-});
+const div = document.createElement("div");
+const body = document.body;
 
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     // Ваш код, который должен выполниться при нажатии пробела
-
     // Проверка значения input
-    if (input.value === "123") {
+    if (input.value >= 16) {
+      if (div.classList.contains("wrong")) {
+        div.classList.remove("wrong");
+      }
+      div.classList.add("loyal");
+      div.textContent = "Вам разрешено войти";
+      body.append(div);
       input.value = "";
-      console.log("Верный пароль");
     } else {
-      console.log("Пароль неверный");
+      div.classList.add("wrong");
+      div.textContent = `Вход запрещен , подождите еще ${16 - input.value} лет`;
+      body.append(div);
+      input.value = "";
     }
   }
 });
+
+function passwordInfo() {}
 
 //Разработайте скрипт, который ловит и записывает события ввода клавиш на странице HTML.
 window.addEventListener("keyup", function (ev) {
@@ -24,7 +32,6 @@ window.addEventListener("keyup", function (ev) {
 });
 
 //Создайте скрипт, который обновляет атрибуты ширины и высоты элемента изображения при изменении размера окна браузера пользователя
-const body = document.body;
 const image = document.querySelector(".img");
 
 window.addEventListener("resize", () => {
