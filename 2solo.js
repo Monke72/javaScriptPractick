@@ -1,9 +1,14 @@
-// let array = [
-//   [1, 2, 3, 4, 5],
-//   [5, 6, 731313, 8, 5],
-//   [9, 100, 11, 12, 5],
-//   [13, 124244, 15, 16, 1313],
-// ];
+let array = [
+  [1, 2, 3, 4, 5],
+  [5, 6, 731313, 8, 5],
+  [9, 100, 11, 12, 5],
+  [13, 124244, 15, 16, 1313],
+];
+
+const res = array.reduce((acc, item) => {
+  return acc.concat(item);
+}, []);
+console.log(res);
 
 // let max = [0][0];
 
@@ -38,5 +43,3 @@
 //   return newMass;
 // }
 // console.log(sumAll(2, 4));
-
-
