@@ -18,3 +18,4 @@ Promise.all([sleep(2000), sleep(5000)]).then(() => {
 Promise.race([sleep(2000), sleep(5000)]).then(() => {
   console.log("Race promises");
 }); //Отрабатыет после выполнения первого промиса , для опредения какой из промисов был выполнен первым
+//git prac
